@@ -21,6 +21,7 @@ jobs:
           exclude: |
             **/.git*
             **/.git*/**
-            **/node_modules/**
+            **/.idea*
+            **/.idea*/**
       - name: Set Environment Variable for SMTP_PASS
         run: echo "SMTP_PASS=${{ secrets.SMTP_PASS }}" >> $GITHUB_ENV
