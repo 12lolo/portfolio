@@ -1,5 +1,6 @@
 <?php
-return [
+// Your existing configuration
+$config = [
     'smtp_host' => 'smtp.hostinger.com',
     'smtp_user' => 'info@sennevisser.me', // Your Hostinger email address
     'smtp_pass' => getenv('SMTP_PASS'), // Use the SMTP_PASS environment variable
@@ -8,3 +9,10 @@ return [
     'from_name' => 'Senne_Visser', // Your name or website name
     'to_email' => 'sennevisser@outlook.com' // Where you want to receive the emails
 ];
+
+// Check if smtp_pass is set
+if ($config['smtp_pass'] === false) {
+    echo "SMTP Password is not set.";
+} else {
+    echo "SMTP Password is set.";
+}
