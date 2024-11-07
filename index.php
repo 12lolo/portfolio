@@ -12,7 +12,7 @@ if (empty($_SESSION['csrf_token'])) {
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta charset="UTF-8">
-  <title>Senne Visser</title>
+  <title>Senne</title>
   <link rel="icon" type="image/x-icon" href="images/favicon.png">
   <meta name="description" content="Web designer and front-end developer">
   <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,400,600' rel='stylesheet' type='text/css'>
