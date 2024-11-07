@@ -1,5 +1,5 @@
 <?php
-session_start(); // Start the session
+session_start();
 
 // Generate a CSRF token if it doesn't exist
 if (empty($_SESSION['csrf_token'])) {
@@ -8,15 +8,21 @@ if (empty($_SESSION['csrf_token'])) {
 
 include 'includes/config.php';
 
-// Debugging: Output the raw SMTP_PASS value
-echo "<pre>";
-echo "Raw SMTP_PASS: " . getenv('SMTP_PASS') . "\n"; // Check the raw value of SMTP_PASS
-echo "SMTP Password: " . htmlspecialchars($config['smtp_pass']) . "\n"; // Check the configured SMTP password
-echo "</pre>";
+// Check if SMTP_PASS is set temporarily for testing
+$smtpPass = getenv('SMTP_PASS');
+if ($smtpPass) {
+    echo "<pre>SMTP_PASS is set. Length: " . strlen($smtpPass) . " characters.</pre>";
+    echo "<pre>SMTP_PASS starts with: " . htmlspecialchars(substr($smtpPass, 0, 4)) . "****</pre>";
+} else {
+    echo "<pre>SMTP_PASS is NOT set.</pre>";
+}
 
-echo "<pre>";
-print_r($_SERVER); // Print all server variables for debugging
-echo "</pre>";
+// Optional: Print all server variables for local debugging
+if ($_SERVER['SERVER_NAME'] === 'localhost') {
+    echo "<pre>";
+    print_r($_SERVER); // Print all server variables for debugging
+    echo "</pre>";
+}
 ?>
 
 <!DOCTYPE html>
