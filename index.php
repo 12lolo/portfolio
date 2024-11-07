@@ -7,19 +7,20 @@ if (empty($_SESSION['csrf_token'])) {
 }
 
 include 'includes/config.php';
-echo "Raw SMTP_PASS: " . getenv('SMTP_PASS') . "\n";
-// Display the SMTP password check result
+
+// Debugging: Output the raw SMTP_PASS value
 echo "<pre>";
-echo "SMTP Password: " . htmlspecialchars($config['smtp_pass']) . "\n";
+echo "Raw SMTP_PASS: " . getenv('SMTP_PASS') . "\n"; // Check the raw value of SMTP_PASS
+echo "SMTP Password: " . htmlspecialchars($config['smtp_pass']) . "\n"; // Check the configured SMTP password
 echo "</pre>";
 
 echo "<pre>";
-print_r($_SERVER);
+print_r($_SERVER); // Print all server variables for debugging
 echo "</pre>";
 ?>
 
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta charset="UTF-8">
