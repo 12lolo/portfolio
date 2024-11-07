@@ -5,6 +5,7 @@ session_start(); // Start the session
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
+echo "SMTP Password: " . htmlspecialchars($config['smtp_pass']);
 ?>
 
 <!DOCTYPE html>
