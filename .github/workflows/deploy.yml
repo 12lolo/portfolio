@@ -12,18 +12,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Set Environment Variable for SMTP_PASS
-      - name: Set Environment Variable for SMTP_PASS
-        run: echo "SMTP_PASS=${{ secrets.SMTP_PASS }}" >> $GITHUB_ENV
-
-      # Run PHP Script to check if SMTP_PASS is set
-      - name: Run PHP Script to verify SMTP_PASS
+      # Create a temporary config.php file with sensitive info
+      - name: Create temporary config.php
         run: |
-          if [[ -z "$SMTP_PASS" ]]; then
-            echo "SMTP_PASS is not set."
-          else
-            echo "SMTP_PASS is set successfully (but not printing for security)."
-          fi
+          echo "<?php" > includes/config.php
+          echo "\$config['smtp_pass'] = '${{ secrets.SMTP_PASS }}';" >> includes/config.php
+
+      # Confirm that the config file was created (without revealing secrets)
+      - name: Check config file
+        run: cat includes/config.php | grep smtp_pass
 
       # FTP Deploy
       - name: FTP Deploy
@@ -38,3 +35,7 @@ jobs:
             **/.git*/**
             **/.idea*
             **/.idea*/**
+
+      # Clean up temporary config file
+      - name: Remove temporary config file
+        run: rm includes/config.php
