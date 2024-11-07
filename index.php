@@ -32,20 +32,20 @@ echo "</pre>";
 <body>
 
   <!-- navbar header -->
-  <div class="nav-header">
-      <div class="logo logo.home"></div>
-
-      <button class="hamburger">
-          <div class="bar"></div>
-      </button>
-      <nav>
-          <ul>
-              <li data-menuanchor="fourthPage"><a href="#contact">CONTACT</a></li>
-              <li data-menuanchor="thirdPage"><a href="#portfolio">PORTFOLIO</a></li>
-              <li data-menuanchor="secondPage"><a href="#about">ABOUT</a></li>
-          </ul>
-      </nav>
-  </div>
+<!--  <div class="nav-header">-->
+<!--      <div class="logo logo.home"></div>-->
+<!---->
+<!--      <button class="hamburger">-->
+<!--          <div class="bar"></div>-->
+<!--      </button>-->
+<!--      <nav>-->
+<!--          <ul>-->
+<!--              <li data-menuanchor="fourthPage"><a href="#contact">CONTACT</a></li>-->
+<!--              <li data-menuanchor="thirdPage"><a href="#portfolio">PORTFOLIO</a></li>-->
+<!--              <li data-menuanchor="secondPage"><a href="#about">ABOUT</a></li>-->
+<!--          </ul>-->
+<!--      </nav>-->
+<!--  </div>-->
   <!-- end navbar header -->
 
   <!-- begin fullpage -->
