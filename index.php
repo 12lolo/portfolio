@@ -6,23 +6,6 @@ if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
-include 'includes/config.php';
-
-// Check if SMTP_PASS is set temporarily for testing
-$smtpPass = getenv('SMTP_PASS');
-if ($smtpPass) {
-    echo "<pre>SMTP_PASS is set. Length: " . strlen($smtpPass) . " characters.</pre>";
-    echo "<pre>SMTP_PASS starts with: " . htmlspecialchars(substr($smtpPass, 0, 4)) . "****</pre>";
-} else {
-    echo "<pre>SMTP_PASS is NOT set.</pre>";
-}
-
-// Optional: Print all server variables for local debugging
-if ($_SERVER['SERVER_NAME'] === 'localhost') {
-    echo "<pre>";
-    print_r($_SERVER); // Print all server variables for debugging
-    echo "</pre>";
-}
 ?>
 
 <!DOCTYPE html>

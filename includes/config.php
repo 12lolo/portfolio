@@ -9,10 +9,3 @@ $config = [
     'from_name' => 'Senne_Visser', // Your name or website name
     'to_email' => 'sennevisser@outlook.com' // Where you want to receive the emails
 ];
-
-// Check if smtp_pass is set
-if ($config['smtp_pass'] === false || empty($config['smtp_pass'])) {
-    echo "SMTP Password is not set.";
-} else {
-    echo "SMTP Password is set.";
-}

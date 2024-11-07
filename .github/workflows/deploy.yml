@@ -11,18 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      # Create a temporary config.php file with sensitive info
-      - name: Create temporary config.php
-        run: |
-          echo "<?php" > includes/config.php
-          echo "\$config['smtp_pass'] = '${{ secrets.SMTP_PASS }}';" >> includes/config.php
-
-      # Confirm that the config file was created (without revealing secrets)
-      - name: Check config file
-        run: cat includes/config.php | grep smtp_pass
-
-      # FTP Deploy
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -35,7 +23,3 @@ jobs:
             **/.git*/**
             **/.idea*
             **/.idea*/**
-
-      # Clean up temporary config file
-      - name: Remove temporary config file
-        run: rm includes/config.php
