@@ -1,0 +1,111 @@
+/* contact us styles */
+
+/* input field styles */
+
+.contact-form {
+  padding: 0px 15px 0px 15px;
+
+  #form-messages {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: none;
+  }
+
+  #form-messages.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+  }
+
+  #form-messages.error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+  }
+
+  .form-control {
+    border: 2px solid rgba(0, 0, 0, 0.27);
+    width: 100%;
+    max-width: 100%;
+    height: 3em;
+    font-size: 16px;
+    padding: 1em;
+    margin: 0.5em 0 2em 0;
+    font-weight: bold;
+  }
+
+  textarea {
+    min-height: 10em;
+  }
+
+  label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  #submit {
+    outline: none;
+    padding: 12px;
+    min-width: 200px;
+    border-radius: 2px;
+    border: 2px solid #ff6363;
+    text-align: center;
+    font-size: 1em;
+    color: #ff6363;
+    background-color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  #submit:hover {
+    background-color: #ff6363;
+    color: white;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+
+  /* Honeypot styling */
+  .honeypot {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  /* Visually hidden but accessible labels */
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  /* Form validation styles */
+  .form-control:valid {
+    border-color: #28a745;
+  }
+
+  .form-control:invalid {
+    border-color: #dc3545;
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "name": "senne/portfolio",
+    "authors": [
+        {
+            "name": "12lolo",
+            "email": "145444658+12lolo@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

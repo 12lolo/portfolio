@@ -1,0 +1,29 @@
+/* footer styles */
+
+.footer {
+  background-color: #484848;
+  height: 100px;
+  padding-top: 10px;
+  p {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  nav {
+    span {
+      a {
+        color: #b9b9b9;
+        padding: 0px 5px 0px 5px;
+      }
+
+      a:hover {
+        color: #ff6363;
+        -webkit-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}
