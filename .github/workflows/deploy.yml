@@ -17,7 +17,7 @@ jobs:
           server: ftp.sennevisser.me
           username: u540587252
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /domains/sennevisser.me/public_html
+          server-dir: /domains/sennevisser.me/public_html/
           exclude: |
             **/.git*
             **/.git*/**
