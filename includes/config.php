@@ -11,7 +11,7 @@ $config = [
 ];
 
 // Check if smtp_pass is set
-if ($config['smtp_pass'] === false) {
+if ($config['smtp_pass'] === false || empty($config['smtp_pass'])) {
     echo "SMTP Password is not set.";
 } else {
     echo "SMTP Password is set.";

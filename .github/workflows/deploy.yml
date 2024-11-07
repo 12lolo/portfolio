@@ -11,6 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      # Set Environment Variable for SMTP_PASS
+      - name: Set Environment Variable for SMTP_PASS
+        run: echo "SMTP_PASS=${{ secrets.SMTP_PASS }}" >> $GITHUB_ENV
+
+      # Print Environment Variables for Debugging
+      - name: Print Environment Variables
+        run: env
+
+      # Run PHP Script to check SMTP_PASS
+      - name: Run PHP Script
+        run: php index.php
+
+      # FTP Deploy
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -23,7 +37,3 @@ jobs:
             **/.git*/**
             **/.idea*
             **/.idea*/**
-      - name: Set Environment Variable for SMTP_PASS
-        run: echo "SMTP_PASS=${{ secrets.SMTP_PASS }}" >> $GITHUB_ENV
-      - name: Print Environment Variables
-        run: env
