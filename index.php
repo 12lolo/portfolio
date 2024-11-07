@@ -5,7 +5,7 @@ session_start(); // Start the session
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
-require '../vendor/autoload.php';
+include 'includes/config.php';
 
 ?>
 
