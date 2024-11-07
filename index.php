@@ -5,8 +5,13 @@ session_start(); // Start the session
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
+
 include 'includes/config.php';
 
+// Display the SMTP password check result
+echo "<pre>";
+echo "SMTP Password: " . htmlspecialchars($config['smtp_pass']) . "\n";
+echo "</pre>";
 ?>
 
 <!DOCTYPE html>
